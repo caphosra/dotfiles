@@ -28,6 +28,7 @@ vim.opt.tabstop = 4
 vim.opt.number = true
 
 vim.keymap.set("n", "<C-f>", "<cmd>:Fern . -reveal=% -drawer -toggle<CR>")
+vim.g["fern#renderer"] = "nerdfont"
 
 -- Configure plugins
 require("lazy").setup("plugins")
