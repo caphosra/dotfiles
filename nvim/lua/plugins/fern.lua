@@ -1,6 +1,9 @@
 return {
     {
-        "lambdalisue/fern.vim"
+        "lambdalisue/fern.vim",
+        config = function ()
+            vim.g["fern#renderer"] = "nerdfont"
+        end
     },
     {
         "lambdalisue/nerdfont.vim"
