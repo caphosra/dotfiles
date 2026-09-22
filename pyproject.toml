@@ -1,0 +1,22 @@
+[project]
+name = "dotfiles"
+version = "0.1.0"
+description = "Configurations for my linux environment"
+readme = "README.md"
+authors = [
+    { name = "Akihisa Yagi", email = "caphosra@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = []
+
+[project.scripts]
+install = "scripts.install:main"
+uninstall = "scripts.uninstall:main"
+
+[build-system]
+requires = ["uv_build>=0.12.17,<0.13.0"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "scripts"
+module-root = ""
