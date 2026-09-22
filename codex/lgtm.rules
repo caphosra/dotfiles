@@ -1,0 +1,99 @@
+#
+# Utility commands
+#
+prefix_rule(pattern=["rg"], decision="allow")
+prefix_rule(pattern=["rm"], decision="allow")
+prefix_rule(pattern=["mkdir"], decision="allow")
+prefix_rule(pattern=["printf"], decision="allow")
+prefix_rule(pattern=["curl"], decision="allow")
+prefix_rule(pattern=["wget"], decision="allow")
+prefix_rule(pattern=["df"], decision="allow")
+prefix_rule(pattern=["tail"], decision="allow")
+prefix_rule(pattern=["head"], decision="allow")
+prefix_rule(pattern=["ps"], decision="allow")
+prefix_rule(pattern=["kill"], decision="allow")
+prefix_rule(pattern=["sed"], decision="allow")
+prefix_rule(
+    pattern=["grep"],
+    decision="forbidden",
+    justification="Use rg instead."
+)
+#
+# Project management tools
+#
+prefix_rule(
+    pattern=["cargo"],
+    decision="allow",
+    justification="Using project management tools is allowed."
+)
+prefix_rule(
+    pattern=["uv"],
+    decision="allow",
+    justification="Using project management tools is allowed."
+)
+prefix_rule(
+    pattern=["npm"],
+    decision="allow",
+    justification="Using project management tools is allowed."
+)
+#
+# Git operations
+#
+prefix_rule(
+    pattern=["git", "commit"],
+    decision="forbidden",
+    justification="Making changes to the repository is not allowed."
+)
+prefix_rule(
+    pattern=["git", "push"],
+    decision="forbidden",
+    justification="Making changes to the repository is not allowed."
+)
+prefix_rule(
+    pattern=["git", "pull"],
+    decision="prompt",
+    justification="Pulling changes from the repository requires approval."
+)
+prefix_rule(
+    pattern=["git", "fetch"],
+    decision="allow",
+    justification="Fetching changes from the repository is allowed."
+)
+prefix_rule(
+    pattern=["git", "clone"],
+    decision="allow",
+    justification="Cloning the repository is allowed."
+)
+prefix_rule(
+    pattern=["git", "diff"],
+    decision="allow",
+    justification="Viewing differences in the repository is allowed."
+)
+prefix_rule(
+    pattern=["git", "log"],
+    decision="allow",
+    justification="Viewing the commit history of the repository is allowed."
+)
+#
+# Others
+#
+prefix_rule(
+    pattern=["podman"],
+    decision="allow",
+    justification="Using container tools is allowed."
+)
+prefix_rule(
+    pattern=["podman-compose"],
+    decision="allow",
+    justification="Using container tools is allowed."
+)
+prefix_rule(
+    pattern=["docker"],
+    decision="prompt",
+    justification="Using docker requires approval. Use podman instead if possible."
+)
+prefix_rule(
+    pattern=["python3"],
+    decision="allow",
+    justification="Executing Python scripts is allowed."
+)

@@ -40,6 +40,11 @@ def managed_links() -> tuple[ManagedLink, ...]:
             source=REPOSITORY_ROOT / "tmux" / ".tmux.conf",
             destination=Path.home() / ".tmux.conf",
         ),
+        ManagedLink(
+            label="Codex rules",
+            source=REPOSITORY_ROOT / "codex" / "lgtm.rules",
+            destination=Path.home() / ".codex" / "rules" / "lgtm.rules",
+        ),
     )
 
 
